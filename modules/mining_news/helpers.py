@@ -123,10 +123,11 @@ class Helpers:
     def normalization_unusual_char(text):
         import re
 
-        text = text.replace('\n', ' ')
+        if text is not None:
+            text = text.replace('\n', ' ')
 
-        text = re.sub(r'[\u2028\u2029\u00a0]', '', text)
-        text = re.sub(r'\s+', ' ', text)
+            text = re.sub(r'[\u2028\u2029\u00a0]', '', text)
+            text = re.sub(r'\s+', ' ', text)
 
         return text
 
