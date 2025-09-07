@@ -35,7 +35,7 @@ class Controller:
                 date = description.split(" — ")[0]
                 description = description.split(" — ")[1]
 
-            pprint.pp({
+            metadata = {
                 'site_name': site_name,
                 'site_base_url': site_base_url,
 
@@ -44,7 +44,8 @@ class Controller:
 
                 'date': date,
                 'description': description,
-            })
+            }
+            pprint.pp(metadata)
             print("")
 
     @staticmethod
