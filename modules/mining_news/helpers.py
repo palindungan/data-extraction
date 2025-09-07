@@ -118,3 +118,19 @@ class Helpers:
         print(f"get_proxy_ip_random: {result}")
 
         return result
+
+    @staticmethod
+    def normalization_unusual_char(text):
+        import re
+
+        text = text.replace('\n', ' ')
+
+        text = re.sub(r'[\u2028\u2029\u00a0]', '', text)
+        text = re.sub(r'\s+', ' ', text)
+
+        return text
+
+    @staticmethod
+    def normalization_text(text):
+        text = Helpers.normalization_unusual_char(text)
+        return text
