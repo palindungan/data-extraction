@@ -36,14 +36,14 @@ class Controller:
                 description = description.split(" — ")[1]
 
             metadata = {
-                'site_name': site_name,
-                'site_base_url': site_base_url,
+                'site_name': Helpers.normalization_text(text=site_name),
+                'site_base_url': Helpers.normalization_text(text=site_base_url),
 
-                'title': title,
-                'url': url,
+                'title': Helpers.normalization_text(text=title),
+                'url': Helpers.normalization_text(text=url),
 
-                'date': date,
-                'description': description,
+                'date': Helpers.normalization_text(text=date),
+                'description': Helpers.normalization_text(text=description),
             }
             pprint.pp(metadata)
             print("")
