@@ -4,6 +4,9 @@ from bs4 import BeautifulSoup
 
 from modules.mining_news.helpers import Helpers
 
+from scripts.repositories.mining_news import MiningNews as MiningNewsRepository
+from scripts.repositories.mining_news_history import MiningNewsHistory as MiningNewsHistoryRepository
+
 
 class Controller:
     @staticmethod
