@@ -1,6 +1,6 @@
 class MiningNewsHistory:
     @staticmethod
-    def auto_update(
+    def store(
             mining_source_id=None,
             code=None,
             data=None,
