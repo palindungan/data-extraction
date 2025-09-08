@@ -1,5 +1,43 @@
 class MiningNews:
     @staticmethod
+    def get_data(
+            cursor=None,
+            select='mining_news.*',
+
+            get_by_id=None,
+            get_by_code=None,
+    ):
+        where_id = ''
+        if get_by_id is not None:
+            where_id = f"""
+                AND mining_news.id = %(get_by_id)s
+            """
+
+        where_code = ''
+        if get_by_code is not None:
+            where_code = f"""
+                AND mining_news.code = %(get_by_code)s
+            """
+
+        query = f"""
+            SELECT
+                {select}
+            FROM
+                mining_news
+            WHERE
+                mining_news.id != 0
+                {where_id}
+                {where_code}
+        """
+
+        cursor.execute(query, ({
+            'get_by_id': get_by_id,
+            'get_by_code': get_by_code,
+        }))
+
+        return cursor
+
+    @staticmethod
     def store(
             mining_source_id=None,
             code=None,
