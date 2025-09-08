@@ -138,4 +138,34 @@ class MiningNews:
             code=None,
             data=None,
     ):
-        pass
+        import os
+        import psycopg2
+        from psycopg2 import extras
+        from dotenv import load_dotenv
+
+        load_dotenv()
+        db_url = os.getenv("DATABASE_URL_DATA_MINING")
+        connection = psycopg2.connect(db_url)
+
+        with connection:
+            with connection.cursor(cursor_factory=extras.DictCursor) as cursor:
+                cursor_result = MiningNews.get_data(
+                    cursor=cursor,
+                    select=f"""
+                        mining_news.*
+                    """,
+                    get_by_code=code,
+                )
+                mining_news = cursor_result.fetchone()
+                if mining_news:
+                    MiningNews.update(
+                        mining_source_id=mining_source_id,
+                        code=code,
+                        data=data,
+                    )
+                else:
+                    MiningNews.store(
+                        mining_source_id=mining_source_id,
+                        code=code,
+                        data=data,
+                    )
