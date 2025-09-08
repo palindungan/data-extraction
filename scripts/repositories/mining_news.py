@@ -53,6 +53,13 @@ class MiningNews:
         db_url = os.getenv("DATABASE_URL")
         connection = psycopg2.connect(db_url)
 
+        title = data['title']
+        url = data['url']
+        date = data['date']
+        description = data['description']
+        site_name = data['site_name']
+        site_base_url = data['site_base_url']
+
         if data:
             data = json.dumps(data)
 
@@ -65,6 +72,13 @@ class MiningNews:
                             code,
                             data,
 
+                            title,
+                            url,
+                            date,
+                            description,
+                            site_name,
+                            site_base_url,
+
                             created_at,
                             updated_at
                         )
@@ -73,6 +87,13 @@ class MiningNews:
                             %(mining_source_id)s,
                             %(code)s,
                             %(data)s,
+
+                            %(title)s,
+                            %(url)s,
+                            %(date)s,
+                            %(description)s,
+                            %(site_name)s,
+                            %(site_base_url)s,
 
                             now(),
                             now()
@@ -83,6 +104,13 @@ class MiningNews:
                     'mining_source_id': mining_source_id,
                     'code': code,
                     'data': data,
+
+                    'title': title,
+                    'url': url,
+                    'date': date,
+                    'description': description,
+                    'site_name': site_name,
+                    'site_base_url': site_base_url,
                 }))
                 connection.commit()
                 result = cursor.fetchone()
