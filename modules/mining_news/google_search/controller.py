@@ -51,6 +51,18 @@ class Controller:
             pprint.pp(metadata)
             print("")
 
+            MiningNewsHistoryRepository.store(
+                mining_source_id=1,
+                code=metadata['url'],
+                data=metadata,
+            )
+
+            MiningNewsRepository.auto_update(
+                mining_source_id=1,
+                code=metadata['url'],
+                data=metadata,
+            )
+
     @staticmethod
     def mining(
             query=None,
