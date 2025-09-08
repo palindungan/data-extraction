@@ -50,7 +50,7 @@ class MiningNews:
         from dotenv import load_dotenv
 
         load_dotenv()
-        db_url = os.getenv("DATABASE_URL_DATA_MINING")
+        db_url = os.getenv("DATABASE_URL")
         connection = psycopg2.connect(db_url)
 
         if data:
@@ -102,7 +102,7 @@ class MiningNews:
         from dotenv import load_dotenv
 
         load_dotenv()
-        db_url = os.getenv("DATABASE_URL_DATA_MINING")
+        db_url = os.getenv("DATABASE_URL")
         connection = psycopg2.connect(db_url)
 
         if data:
@@ -144,7 +144,7 @@ class MiningNews:
         from dotenv import load_dotenv
 
         load_dotenv()
-        db_url = os.getenv("DATABASE_URL_DATA_MINING")
+        db_url = os.getenv("DATABASE_URL")
         connection = psycopg2.connect(db_url)
 
         with connection:
