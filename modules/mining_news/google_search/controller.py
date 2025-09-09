@@ -89,6 +89,7 @@ class Controller:
                 if next_button is not None:
                     WebDriverWait(driver, 10).until(ec.element_to_be_clickable(next_button))
                     driver.execute_script("arguments[0].scrollIntoView();", next_button)
+                    time.sleep(2)
                     driver.execute_script("arguments[0].click();", next_button)
                 else:
                     break
