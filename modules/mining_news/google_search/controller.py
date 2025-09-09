@@ -70,7 +70,7 @@ class Controller:
         driver = Helpers.chrome_driver_undetected_v1()
 
         try:
-            url = "https://www.google.com/search?q=kasus+presiden+prabowo+subianto&sca_esv=efb3ab264f9589fa&ei=evO9aMPrIrPH4-EPw5-LoQg&ved=0ahUKEwjDkMTjxsePAxWz4zgGHcPPIoQQ4dUDCBE&uact=5&oq=kasus+presiden+prabowo+subianto&gs_lp=Egxnd3Mtd2l6LXNlcnAiH2thc3VzIHByZXNpZGVuIHByYWJvd28gc3ViaWFudG8yBBAAGEcyBBAAGEcyBBAAGEcyBBAAGEcyBBAAGEcyBBAAGEcyBBAAGEcyBBAAGEdI0h5QtxRYshxwAHgDkAECmAEAoAEAqgEAuAEDyAEA-AEBmAICoAILmAMAiAYBkAYIkgcBMqAHALIHALgHAMIHAzItMsgHCA&sclient=gws-wiz-serp"
+            url = "https://www.google.com/search?q=kasus+presiden+prabowo+subianto&rlz=1C1VDKB_enID1094ID1094&oq=kasus+presiden+prabowo+subianto&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRiPAjIHCAIQIRiPAtIBCDY2NjFqMGoxqAIAsAIA&sourceid=chrome&ie=UTF-8&sei=vp-_aLS-LqGW4-EPq6zYcA"
 
             Controller.mining_data(
                 driver=driver,
