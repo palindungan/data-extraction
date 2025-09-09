@@ -86,7 +86,7 @@ class Controller:
 
                 page_current += 1
                 next_button = driver.find_element(By.CSS_SELECTOR, f'a[aria-label="Page {page_current}"]')
-                if next_button is not None:
+                if next_button:
                     WebDriverWait(driver, 10).until(ec.element_to_be_clickable(next_button))
                     driver.execute_script("arguments[0].scrollIntoView();", next_button)
                     time.sleep(2)
