@@ -73,14 +73,14 @@ class Controller:
         try:
             url = "https://www.google.com/search?q=kasus+presiden+prabowo+subianto"
 
-            page_end = 5
-            for item in range(page_end):
-                next_button = driver.find_element(By.CSS_SELECTOR, f'a[aria-label="Page {item}"]')
-
             Controller.mining_data(
                 driver=driver,
                 url=url,
             )
+
+            page_end = 5
+            for item in range(page_end):
+                next_button = driver.find_element(By.CSS_SELECTOR, f'a[aria-label="Page {item}"]')
         except Exception as e:
             print(f"Exception: {e}")
 
