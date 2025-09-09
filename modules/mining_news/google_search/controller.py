@@ -1,6 +1,7 @@
 import time
 import pprint
 from bs4 import BeautifulSoup
+from selenium.webdriver.common.by import By
 
 from modules.mining_news.helpers import Helpers
 
@@ -71,6 +72,10 @@ class Controller:
 
         try:
             url = "https://www.google.com/search?q=kasus+presiden+prabowo+subianto"
+
+            page_end = 5
+            for item in range(page_end):
+                next_button = parent.find_element(By.CSS_SELECTOR, 'input[name="ctl00$ctl54$g_07ea89c7_b69c_46e3_964d_8e2ff896e0da$ctl00$DataPagerPeraturan$ctl02$ctl00"]')
 
             Controller.mining_data(
                 driver=driver,
