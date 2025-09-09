@@ -75,7 +75,7 @@ class Controller:
 
             page_end = 5
             for item in range(page_end):
-                next_button = parent.find_element(By.CSS_SELECTOR, 'input[name="ctl00$ctl54$g_07ea89c7_b69c_46e3_964d_8e2ff896e0da$ctl00$DataPagerPeraturan$ctl02$ctl00"]')
+                next_button = driver.find_element(By.CSS_SELECTOR, f'a[aria-label="Page {item}"]')
 
             Controller.mining_data(
                 driver=driver,
