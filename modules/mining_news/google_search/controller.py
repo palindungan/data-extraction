@@ -23,7 +23,10 @@ class Controller:
         for idx, item in enumerate(items):
             row_1 = item.find('div', {'class': 'kb0PBd A9Y9g jGGQ5e', 'data-snhf': '0'})
             site_name = row_1.find('span', {'class': 'VuuXrf'}).text.strip()
-            site_base_url = row_1.find('cite', {'class': 'qLRx3b tjvcx GvPZzd cHaqb'}).contents[0].text.strip()
+
+            site_base_url = None
+            if row_1.find('cite', {'class': 'qLRx3b tjvcx GvPZzd cHaqb'}):
+                site_base_url = row_1.find('cite', {'class': 'qLRx3b tjvcx GvPZzd cHaqb'}).contents[0].text.strip()
 
             title = row_1.find('h3', {'class': 'LC20lb MBeuO DKV0Md'}).text.strip()
             url = row_1.find('a', {'class': 'zReHs'})['href']
