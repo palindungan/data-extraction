@@ -80,8 +80,11 @@ class Controller:
 
                 page_current += 1
                 next_button = driver.find_element(By.CSS_SELECTOR, f'a[aria-label="Page {page_current}"]')
-                if not next_button:
+                if next_button:
+                    pass
+                else:
                     break
+
         except Exception as e:
             print(f"Exception: {e}")
 
