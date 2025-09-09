@@ -13,14 +13,7 @@ class Controller:
     @staticmethod
     def mining_data(
             driver=None,
-            url=None,
     ):
-        print(f"url: {url}")
-        print("")
-
-        driver.get(url)
-        time.sleep(5)
-
         soup = BeautifulSoup(driver.page_source, 'html.parser')
 
         items = soup.find_all('div', {'class': 'N54PNb BToiNc'})
@@ -71,16 +64,20 @@ class Controller:
         driver = Helpers.chrome_driver_undetected_v1()
 
         try:
+            page_current = 1
+
             url = "https://www.google.com/search?q=kasus+presiden+prabowo+subianto"
+            print(f"url: {url}")
+            print("")
+
+            driver.get(url)
+            time.sleep(5)
 
             Controller.mining_data(
                 driver=driver,
-                url=url,
             )
 
-            page_end = 5
-            for item in range(page_end):
-                next_button = driver.find_element(By.CSS_SELECTOR, f'a[aria-label="Page {item}"]')
+            next_button = driver.find_element(By.CSS_SELECTOR, f'a[aria-label="Page {page_current}"]')
         except Exception as e:
             print(f"Exception: {e}")
 
