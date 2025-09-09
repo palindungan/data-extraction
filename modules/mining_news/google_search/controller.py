@@ -70,7 +70,7 @@ class Controller:
         driver = Helpers.chrome_driver_undetected_v1()
 
         try:
-            url = "https://www.google.com/search?q=kasus+presiden+prabowo+subianto&rlz=1C1VDKB_enID1094ID1094&oq=kasus+presiden+prabowo+subianto&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRiPAjIHCAIQIRiPAtIBCDY2NjFqMGoxqAIAsAIA&sourceid=chrome&ie=UTF-8&sei=vp-_aLS-LqGW4-EPq6zYcA"
+            url = "https://www.google.com/search?q=kasus+presiden+prabowo+subianto"
 
             Controller.mining_data(
                 driver=driver,
