@@ -73,14 +73,15 @@ class Controller:
             driver.get(url)
             time.sleep(5)
 
-            Controller.mining_data(
-                driver=driver,
-            )
+            while True:
+                Controller.mining_data(
+                    driver=driver,
+                )
 
-            page_current += 1
-            next_button = driver.find_element(By.CSS_SELECTOR, f'a[aria-label="Page {page_current}"]')
-            if not next_button:
-                break
+                page_current += 1
+                next_button = driver.find_element(By.CSS_SELECTOR, f'a[aria-label="Page {page_current}"]')
+                if not next_button:
+                    break
         except Exception as e:
             print(f"Exception: {e}")
 
