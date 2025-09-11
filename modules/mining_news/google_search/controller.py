@@ -49,7 +49,7 @@ class Controller:
                 'description': Helpers.normalization_text(text=description),
             }
             pprint.pp(metadata)
-            print("")
+            print("--------------------------------------------------------------------------------")
 
             MiningNewsHistoryRepository.store(
                 mining_source_id=1,
@@ -80,6 +80,7 @@ class Controller:
             time.sleep(5)
 
             while True:
+                print("################################################################################")
                 print(f"page_current {page_current}")
                 print("")
                 time.sleep(1)
