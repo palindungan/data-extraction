@@ -91,7 +91,7 @@ class Controller:
                 try:
                     next_button = driver.find_element(By.CSS_SELECTOR, f'a[aria-label="Page {page_current}"]')
                 except Exception as e:
-                    print(f"Exception: {e}")
+                    print(f"Exception: next_button {e}")
 
                 if next_button:
                     WebDriverWait(driver, 10).until(ec.element_to_be_clickable(next_button))
