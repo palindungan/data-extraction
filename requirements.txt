@@ -11,4 +11,4 @@ beautifulsoup4
 undetected-chromedriver
 selenium
 
-GoogleNews
+gnews
