@@ -1,3 +1,6 @@
+from modules.mining_news.google_news.controller import Controller as GoogleNewsController
 from modules.mining_news.google_search.controller import Controller as GoogleSearchController
 
-GoogleSearchController.mining(query="kasus presiden prabowo subianto")
+query = "kasus presiden prabowo subianto"
+GoogleNewsController.mining(query=query)
+GoogleSearchController.mining(query=query)
