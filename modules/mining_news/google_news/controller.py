@@ -17,5 +17,5 @@ class Controller:
         results = google_news.get_news(query)
 
         for idx, item in enumerate(results):
-            print(item)
+            pprint.pp(item)
             print("--------------------------------------------------------------------------------")
