@@ -12,21 +12,8 @@ class Controller:
         print("")
 
         googlenews = GoogleNews()
-        googlenews.get_news(query)
+        items = googlenews.get_news(query)
 
-        page_current = 1
-
-        while True:
-            print("")
-            print("################################################################################")
-            print(f"page_current {page_current}")
-            print("")
-
-            results = googlenews.page_at(page_current)
-            pprint.pp(results)
+        for idx, item in enumerate(items):
+            pprint.pp(item)
             print("--------------------------------------------------------------------------------")
-
-            if results:
-                page_current += 1
-            else:
-                break
