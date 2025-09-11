@@ -80,6 +80,8 @@ class Controller:
             time.sleep(5)
 
             while True:
+                time.sleep(1)
+
                 Controller.mining_data(
                     driver=driver,
                 )
