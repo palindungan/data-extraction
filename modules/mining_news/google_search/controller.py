@@ -1,5 +1,6 @@
 import time
 import pprint
+import urllib.parse
 
 from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
@@ -72,7 +73,8 @@ class Controller:
         try:
             page_current = 1
 
-            url = "https://www.google.com/search?q=kasus+presiden+prabowo+subianto"
+            query_encoded = urllib.parse.quote_plus(query)
+            url = f"https://www.google.com/search?q={query_encoded}"
             print(f"url: {url}")
             print("")
 
