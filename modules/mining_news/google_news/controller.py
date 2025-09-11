@@ -1,4 +1,5 @@
 import pprint
+
 from GoogleNews import GoogleNews
 
 
