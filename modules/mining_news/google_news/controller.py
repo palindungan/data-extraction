@@ -1,6 +1,6 @@
 import pprint
 
-from GoogleNews import GoogleNews
+from gnews import GNews
 
 
 class Controller:
@@ -11,9 +11,9 @@ class Controller:
         print(f"query: {query}")
         print("")
 
-        googlenews = GoogleNews()
-        items = googlenews.get_news(query)
+        google_news = GNews()
+        results = google_news.get_news(query)
 
-        for idx, item in enumerate(items):
-            pprint.pp(item)
+        for idx, item in enumerate(results):
+            print(item)
             print("--------------------------------------------------------------------------------")
