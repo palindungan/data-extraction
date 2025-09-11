@@ -80,6 +80,8 @@ class Controller:
             time.sleep(5)
 
             while True:
+                print(f"page_current {page_current}")
+                print("")
                 time.sleep(1)
 
                 Controller.mining_data(
