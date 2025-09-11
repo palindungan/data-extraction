@@ -11,7 +11,9 @@ class Controller:
         print(f"query: {query}")
         print("")
 
-        google_news = GNews()
+        google_news = GNews(
+            max_results=10,
+        )
         results = google_news.get_news(query)
 
         for idx, item in enumerate(results):
