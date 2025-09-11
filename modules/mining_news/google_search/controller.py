@@ -80,6 +80,7 @@ class Controller:
             time.sleep(5)
 
             while True:
+                print("")
                 print("################################################################################")
                 print(f"page_current {page_current}")
                 print("")
