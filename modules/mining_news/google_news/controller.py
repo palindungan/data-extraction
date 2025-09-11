@@ -6,6 +6,9 @@ class Controller:
     def mining(
             query=None,
     ):
+        print(f"query: {query}")
+        print("")
+
         googlenews = GoogleNews()
         googlenews.get_news(query)
 
