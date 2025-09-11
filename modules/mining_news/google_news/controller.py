@@ -1,4 +1,6 @@
 class Controller:
     @staticmethod
-    def autorun():
+    def mining(
+            query=None,
+    ):
         pass
