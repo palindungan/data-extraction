@@ -42,8 +42,9 @@ class Controller:
             pprint.pp(metadata)
             print("--------------------------------------------------------------------------------")
 
-            MiningNewsHistoryRepository.store(
-                mining_source_id=2,
-                code=metadata['url'],
-                data=metadata,
-            )
+            if keyword in title.lower() or keyword in description.lower():
+                MiningNewsHistoryRepository.store(
+                    mining_source_id=2,
+                    code=metadata['url'],
+                    data=metadata,
+                )
