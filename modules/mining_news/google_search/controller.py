@@ -61,7 +61,7 @@ class Controller:
                     or keyword in Helpers.get_alphabets_only(description.lower())
             ):
                 MiningNewsHistoryRepository.store(
-                    mining_source_id=1,
+                    mining_source_id=2,
                     code=metadata['url'],
                     data=metadata,
                 )
