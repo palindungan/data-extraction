@@ -54,11 +54,11 @@ class MiningNews:
         connection = psycopg2.connect(db_url)
 
         title = data['title']
-        url = data['url']
-        date = data['date']
         description = data['description']
-        site_name = data['site_name']
-        site_base_url = data['site_base_url']
+        published_date = data['published date']
+        url = data['url']
+        publisher_href = data['publisher_href']
+        publisher_title = data['publisher_title']
 
         if data:
             data = json.dumps(data)
@@ -73,11 +73,11 @@ class MiningNews:
                             data,
 
                             title,
-                            url,
-                            date,
                             description,
-                            site_name,
-                            site_base_url,
+                            published_date,
+                            url,
+                            publisher_href,
+                            publisher_title,
 
                             created_at,
                             updated_at
@@ -89,11 +89,11 @@ class MiningNews:
                             %(data)s,
 
                             %(title)s,
-                            %(url)s,
-                            %(date)s,
                             %(description)s,
-                            %(site_name)s,
-                            %(site_base_url)s,
+                            %(published_date)s,
+                            %(url)s,
+                            %(publisher_href)s,
+                            %(publisher_title)s,
 
                             now(),
                             now()
@@ -106,11 +106,11 @@ class MiningNews:
                     'data': data,
 
                     'title': title,
-                    'url': url,
-                    'date': date,
                     'description': description,
-                    'site_name': site_name,
-                    'site_base_url': site_base_url,
+                    'published_date': published_date,
+                    'url': url,
+                    'publisher_href': publisher_href,
+                    'publisher_title': publisher_title,
                 }))
                 connection.commit()
                 result = cursor.fetchone()
@@ -134,11 +134,11 @@ class MiningNews:
         connection = psycopg2.connect(db_url)
 
         title = data['title']
-        url = data['url']
-        date = data['date']
         description = data['description']
-        site_name = data['site_name']
-        site_base_url = data['site_base_url']
+        published_date = data['published date']
+        url = data['url']
+        publisher_href = data['publisher_href']
+        publisher_title = data['publisher_title']
 
         if data:
             data = json.dumps(data)
@@ -153,11 +153,11 @@ class MiningNews:
                         data = %(data)s,
                         
                         title = %(title)s,
-                        url = %(url)s,
-                        date = %(date)s,
                         description = %(description)s,
-                        site_name = %(site_name)s,
-                        site_base_url = %(site_base_url)s,
+                        published_date = %(published_date)s,
+                        url = %(url)s,
+                        publisher_href = %(publisher_href)s,
+                        publisher_title = %(publisher_title)s,
 
                         updated_at = now()
                     WHERE
@@ -170,11 +170,11 @@ class MiningNews:
                     'data': data,
 
                     'title': title,
-                    'url': url,
-                    'date': date,
                     'description': description,
-                    'site_name': site_name,
-                    'site_base_url': site_base_url,
+                    'published_date': published_date,
+                    'url': url,
+                    'publisher_href': publisher_href,
+                    'publisher_title': publisher_title,
                 }))
                 connection.commit()
                 result = cursor.fetchone()
