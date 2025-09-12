@@ -57,8 +57,8 @@ class Controller:
             pprint.pp(metadata)
 
             if (
-                keyword in Helpers.get_alphabets_only(title.lower())
-                or keyword in Helpers.get_alphabets_only(description.lower())
+                    keyword in Helpers.get_alphabets_only(title.lower())
+                    or keyword in Helpers.get_alphabets_only(description.lower())
             ):
                 MiningNewsHistoryRepository.store(
                     mining_source_id=1,
