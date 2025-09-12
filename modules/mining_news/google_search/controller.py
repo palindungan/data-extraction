@@ -56,7 +56,10 @@ class Controller:
             }
             pprint.pp(metadata)
 
-            if keyword in title.lower() or keyword in description.lower():
+            if (
+                keyword in Helpers.get_alphabets_only(title.lower())
+                or keyword in Helpers.get_alphabets_only(description.lower())
+            ):
                 MiningNewsHistoryRepository.store(
                     mining_source_id=1,
                     code=metadata['url'],
