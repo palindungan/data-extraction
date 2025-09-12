@@ -23,14 +23,31 @@ class Controller:
         items = soup.find_all('div', {'class': 'N54PNb BToiNc'})
         for idx, item in enumerate(items):
             row_1 = item.find('div', {'class': 'kb0PBd A9Y9g jGGQ5e', 'data-snhf': '0'})
-            publisher_title = row_1.find('span', {'class': 'VuuXrf'}).text.strip()
+
+            publisher_title = None
+            try:
+                publisher_title = row_1.find('span', {'class': 'VuuXrf'}).text.strip()
+            except Exception as e:
+                print(f"Exception: {e}")
 
             publisher_href = None
-            if row_1.find('cite', {'class': 'qLRx3b tjvcx GvPZzd cHaqb'}):
-                publisher_href = row_1.find('cite', {'class': 'qLRx3b tjvcx GvPZzd cHaqb'}).contents[0].text.strip()
+            try:
+                if row_1.find('cite', {'class': 'qLRx3b tjvcx GvPZzd cHaqb'}):
+                    publisher_href = row_1.find('cite', {'class': 'qLRx3b tjvcx GvPZzd cHaqb'}).contents[0].text.strip()
+            except Exception as e:
+                print(f"Exception: {e}")
 
-            title = row_1.find('h3', {'class': 'LC20lb MBeuO DKV0Md'}).text.strip()
-            url = row_1.find('a', {'class': 'zReHs'})['href']
+            title = None
+            try:
+                title = row_1.find('h3', {'class': 'LC20lb MBeuO DKV0Md'}).text.strip()
+            except Exception as e:
+                print(f"Exception: {e}")
+
+            url = None
+            try:
+                url = row_1.find('a', {'class': 'zReHs'})['href']
+            except Exception as e:
+                print(f"Exception: {e}")
 
             row_2 = item.find('div', {'class': 'kb0PBd A9Y9g', 'data-sncf': '1'})
             published_date = None
