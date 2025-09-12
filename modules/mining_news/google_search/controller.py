@@ -9,7 +9,6 @@ from selenium.webdriver.support import expected_conditions as ec
 
 from modules.mining_news.helpers import Helpers
 
-from scripts.repositories.mining_news import MiningNews as MiningNewsRepository
 from scripts.repositories.mining_news_history import MiningNewsHistory as MiningNewsHistoryRepository
 
 
@@ -51,12 +50,6 @@ class Controller:
             print("--------------------------------------------------------------------------------")
 
             MiningNewsHistoryRepository.store(
-                mining_source_id=1,
-                code=metadata['url'],
-                data=metadata,
-            )
-
-            MiningNewsRepository.auto_update(
                 mining_source_id=1,
                 code=metadata['url'],
                 data=metadata,
