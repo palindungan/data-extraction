@@ -70,14 +70,13 @@ class Controller:
             print("")
 
             driver.get(url)
-            time.sleep(5)
+            time.sleep(2)
 
             while True:
                 print("")
                 print("################################################################################")
                 print(f"page_current {page_current}")
                 print("")
-                time.sleep(1)
 
                 Controller.mining_data(
                     driver=driver,
@@ -96,7 +95,6 @@ class Controller:
                 if next_button:
                     WebDriverWait(driver, 10).until(ec.element_to_be_clickable(next_button))
                     driver.execute_script("arguments[0].scrollIntoView();", next_button)
-                    time.sleep(3)
                     driver.execute_script("arguments[0].click();", next_button)
                 else:
                     break
