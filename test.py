@@ -1,19 +1,19 @@
 from modules.mining_news.google_news.controller import Controller as GoogleNewsController
 from modules.mining_news.google_search.controller import Controller as GoogleSearchController
 
-name = "yuri mansury"
+keyword = "yuri mansury"
 
 queries = [
-    name,
+    keyword,
 
-    f"berita {name}",
-    f"{name} news",
+    f"berita {keyword}",
+    f"{keyword} news",
 
-    f"seminar {name}",
-    f"{name} seminar",
+    f"seminar {keyword}",
+    f"{keyword} seminar",
 
-    f"pertemuan {name}",
-    f"{name} meeting",
+    f"pertemuan {keyword}",
+    f"{keyword} meeting",
 ]
 
 for idx, item in enumerate(queries):
