@@ -15,7 +15,7 @@ class Helpers:
         chrome_options.add_argument("--disable-popup-blocking")
         # chrome_options.add_argument("--incognito")
 
-        user_agent = Helpers.get_user_agent_random()
+        user_agent = "Mozilla/5.0 (Android 12; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Version/17.0 Safari/604.29.19"
         print(f"user_agent: {user_agent}")
         chrome_options.add_argument(user_agent)
 
