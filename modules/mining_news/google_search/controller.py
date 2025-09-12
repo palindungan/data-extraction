@@ -50,11 +50,17 @@ class Controller:
                 print(f"Exception: {e}")
 
             row_2 = item.find('div', {'class': 'kb0PBd A9Y9g', 'data-sncf': '1'})
+
             published_date = None
-            description = row_2.find('div', {'class': 'VwiC3b yXK7lf p4wth r025kc Hdw6tb'}).text.strip()
-            if " — " in description:
-                published_date = description.split(" — ")[0]
-                description = description.split(" — ")[1]
+            description = None
+            try:
+                published_date = None
+                description = row_2.find('div', {'class': 'VwiC3b yXK7lf p4wth r025kc Hdw6tb'}).text.strip()
+                if " — " in description:
+                    published_date = description.split(" — ")[0]
+                    description = description.split(" — ")[1]
+            except Exception as e:
+                print(f"Exception: {e}")
 
             title = Helpers.normalization_text(title)
             description = Helpers.normalization_text(description)
