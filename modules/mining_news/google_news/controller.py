@@ -10,6 +10,7 @@ from scripts.repositories.mining_news_history import MiningNewsHistory as Mining
 class Controller:
     @staticmethod
     def mining(
+            keyword=None,
             query=None,
     ):
         print(f"query: {query}")

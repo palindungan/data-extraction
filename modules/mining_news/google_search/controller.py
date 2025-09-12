@@ -57,6 +57,7 @@ class Controller:
 
     @staticmethod
     def mining(
+            keyword=None,
             query=None,
     ):
         driver = Helpers.chrome_driver_undetected_v1()

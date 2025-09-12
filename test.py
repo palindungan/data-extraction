@@ -18,9 +18,9 @@ queries = [
 
 for idx, item in enumerate(queries):
     print("GoogleNewsController.mining")
-    GoogleNewsController.mining(query=item)
+    GoogleNewsController.mining(keyword=keyword, query=item)
     print("")
 
     print("GoogleSearchController.mining")
-    GoogleSearchController.mining(query=item)
+    GoogleSearchController.mining(keyword=keyword, query=item,)
     print("")
