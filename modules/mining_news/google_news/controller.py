@@ -17,7 +17,7 @@ class Controller:
         print("")
 
         google_news = GNews(
-            max_results=10,
+            max_results=50,
         )
         results = google_news.get_news(query)
 
