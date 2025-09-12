@@ -15,6 +15,7 @@ from scripts.repositories.mining_news_history import MiningNewsHistory as Mining
 class Controller:
     @staticmethod
     def mining_data(
+            keyword=None,
             driver=None,
     ):
         soup = BeautifulSoup(driver.page_source, 'html.parser')
@@ -56,11 +57,12 @@ class Controller:
             pprint.pp(metadata)
             print("--------------------------------------------------------------------------------")
 
-            MiningNewsHistoryRepository.store(
-                mining_source_id=1,
-                code=metadata['url'],
-                data=metadata,
-            )
+            if keyword in title.lower() or keyword in description.lower():
+                MiningNewsHistoryRepository.store(
+                    mining_source_id=1,
+                    code=metadata['url'],
+                    data=metadata,
+                )
 
     @staticmethod
     def mining(
@@ -87,6 +89,7 @@ class Controller:
                 print("")
 
                 Controller.mining_data(
+                    keyword=keyword,
                     driver=driver,
                 )
 
