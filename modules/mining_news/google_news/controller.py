@@ -24,6 +24,13 @@ class Controller:
         for idx, item in enumerate(results):
             pprint.pp(item)
 
+            site_name = None
+            site_base_url = None
+            title = None
+            url = None
+            date = None
+            description = None
+
             metadata = {
                 'site_name': Helpers.normalization_text(text=site_name),
                 'site_base_url': Helpers.normalization_text(text=site_base_url),
