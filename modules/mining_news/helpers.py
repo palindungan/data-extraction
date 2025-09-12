@@ -120,6 +120,15 @@ class Helpers:
         return result
 
     @staticmethod
+    def get_alphabets_only(text):
+        import re
+
+        """
+        Returns only alphabetic characters (a-z, A-Z) from the input text.
+        """
+        return re.sub(r'[^a-zA-Z]', '', text)
+
+    @staticmethod
     def normalization_unusual_char(text):
         import re
 
