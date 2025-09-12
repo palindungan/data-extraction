@@ -9,11 +9,11 @@ queries = [
     f"berita {keyword}",
     f"{keyword} news",
 
-    f"seminar {keyword}",
-    f"{keyword} seminar",
+    # f"seminar {keyword}",
+    # f"{keyword} seminar",
 
-    f"pertemuan {keyword}",
-    f"{keyword} meeting",
+    # f"pertemuan {keyword}",
+    # f"{keyword} meeting",
 ]
 
 for idx, item in enumerate(queries):
