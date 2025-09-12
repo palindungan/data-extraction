@@ -38,13 +38,20 @@ class Controller:
                 published_date = description.split(" — ")[0]
                 description = description.split(" — ")[1]
 
+            title = Helpers.normalization_text(title)
+            description = Helpers.normalization_text(description)
+            published_date = Helpers.normalization_text(published_date)
+            url = Helpers.normalization_text(url)
+            publisher_href = Helpers.normalization_text(publisher_href)
+            publisher_title = Helpers.normalization_text(publisher_title)
+
             metadata = {
-                'title': Helpers.normalization_text(text=title),
-                'description': Helpers.normalization_text(text=description),
-                'published_date': Helpers.normalization_text(text=published_date),
-                'url': Helpers.normalization_text(text=url),
-                'publisher_href': Helpers.normalization_text(text=publisher_href),
-                'publisher_title': Helpers.normalization_text(text=publisher_title),
+                'title': title,
+                'description': description,
+                'published_date': published_date,
+                'url': url,
+                'publisher_href': publisher_href,
+                'publisher_title': publisher_title,
             }
             pprint.pp(metadata)
             print("--------------------------------------------------------------------------------")
