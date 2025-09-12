@@ -116,6 +116,9 @@ class Controller:
                     driver=driver,
                 )
 
+                if page_current >= 5:
+                    break
+
                 page_current += 1
 
                 next_button = None
