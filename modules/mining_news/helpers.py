@@ -13,13 +13,13 @@ class Helpers:
         chrome_options.add_argument("--ignore-certificate-errors")
         chrome_options.add_argument("--disable-blink-features=AutomationControlled")
         chrome_options.add_argument("--disable-popup-blocking")
-        chrome_options.add_argument("--incognito")
+        # chrome_options.add_argument("--incognito")
 
         user_agent = Helpers.get_user_agent_random()
         print(f"user_agent: {user_agent}")
         chrome_options.add_argument(user_agent)
 
-        driver = uc.Chrome(options=chrome_options, use_subprocess=True, version_main=128)
+        driver = uc.Chrome(options=chrome_options, use_subprocess=True)
 
         driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
             "source": """
