@@ -33,11 +33,13 @@ def upgrade() -> None:
         sa.Column('data', JSON, nullable=True),
 
         sa.Column('title', sa.Text(), nullable=True),
-        sa.Column('url', sa.Text(), nullable=True),
-        sa.Column('date', sa.String(length=255), nullable=True),
         sa.Column('description', sa.Text(), nullable=True),
-        sa.Column('site_name', sa.String(length=255), nullable=True),
-        sa.Column('site_base_url', sa.Text(), nullable=True),
+        sa.Column('published_date', sa.String(length=255), nullable=True),
+        sa.Column('url', sa.Text(), nullable=True),
+
+        sa.Column('publisher_href', sa.Text(), nullable=True),
+        sa.Column('publisher_title', sa.String(length=255), nullable=True),
+
         sa.Column('status_validation', sa.String(length=255), nullable=True),
 
         sa.Column('created_at', DateTime, nullable=True),
