@@ -50,8 +50,8 @@ class Controller:
                     code=metadata['url'],
                     data=metadata,
                 )
-                print("False")
-            else:
                 print("True")
+            else:
+                print("False")
 
             print("--------------------------------------------------------------------------------")
