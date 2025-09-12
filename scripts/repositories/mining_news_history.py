@@ -11,9 +11,13 @@ class MiningNewsHistory:
         from psycopg2 import extras
         from dotenv import load_dotenv
 
+        from scripts.repositories.mining_news import MiningNews as MiningNewsRepository
+
         load_dotenv()
         db_url = os.getenv("DATABASE_URL")
         connection = psycopg2.connect(db_url)
+
+        data_ori = data
 
         if data:
             data = json.dumps(data)
@@ -48,5 +52,11 @@ class MiningNewsHistory:
                 }))
                 connection.commit()
                 result = cursor.fetchone()
+
+        MiningNewsRepository.auto_update(
+            mining_source_id=mining_source_id,
+            code=code,
+            data=data_ori,
+        )
 
         return result
