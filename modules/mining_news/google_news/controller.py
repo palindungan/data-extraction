@@ -24,22 +24,20 @@ class Controller:
         for idx, item in enumerate(results):
             pprint.pp(item)
 
-            site_name = None
-            site_base_url = None
-            title = None
-            url = None
-            date = None
-            description = None
+            title = item['title']
+            description = item['description']
+            published_date = item['published date']
+            url = item['url']
+            publisher_href = item['publisher']['href']
+            publisher_title = item['publisher']['title']
 
             metadata = {
-                'site_name': Helpers.normalization_text(text=site_name),
-                'site_base_url': Helpers.normalization_text(text=site_base_url),
-
                 'title': Helpers.normalization_text(text=title),
-                'url': Helpers.normalization_text(text=url),
-
-                'date': Helpers.normalization_text(text=date),
                 'description': Helpers.normalization_text(text=description),
+                'published_date': Helpers.normalization_text(text=published_date),
+                'url': Helpers.normalization_text(text=url),
+                'publisher_href': Helpers.normalization_text(text=publisher_href),
+                'publisher_title': Helpers.normalization_text(text=publisher_title),
             }
             pprint.pp(metadata)
             print("--------------------------------------------------------------------------------")
