@@ -40,7 +40,6 @@ class Controller:
                 'publisher_title': publisher_title,
             }
             pprint.pp(metadata)
-            print("--------------------------------------------------------------------------------")
 
             if keyword in title.lower() or keyword in description.lower():
                 MiningNewsHistoryRepository.store(
@@ -48,3 +47,8 @@ class Controller:
                     code=metadata['url'],
                     data=metadata,
                 )
+                print("False")
+            else:
+                print("True")
+
+            print("--------------------------------------------------------------------------------")
