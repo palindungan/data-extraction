@@ -55,7 +55,7 @@ class MiningNews:
 
         title = data['title']
         description = data['description']
-        published_date = data['published date']
+        published_date = data['published_date']
         url = data['url']
         publisher_href = data['publisher_href']
         publisher_title = data['publisher_title']
@@ -135,7 +135,7 @@ class MiningNews:
 
         title = data['title']
         description = data['description']
-        published_date = data['published date']
+        published_date = data['published_date']
         url = data['url']
         publisher_href = data['publisher_href']
         publisher_title = data['publisher_title']
