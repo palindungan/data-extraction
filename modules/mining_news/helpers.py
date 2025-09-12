@@ -126,7 +126,7 @@ class Helpers:
         """
         Returns only alphabetic characters (a-z, A-Z) from the input text.
         """
-        return re.sub(r'[^a-zA-Z]', '', text)
+        return re.sub(r'[^a-zA-Z\s]', '', text)
 
     @staticmethod
     def normalization_unusual_char(text):
