@@ -91,9 +91,8 @@ class Controller:
     def mining(
             keyword=None,
             query=None,
+            driver=None,
     ):
-        driver = Helpers.chrome_driver_undetected_v1()
-
         try:
             page_current = 1
 
@@ -138,5 +137,3 @@ class Controller:
 
         except Exception as e:
             print(f"Exception: {e}")
-
-        driver.quit()
