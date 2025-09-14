@@ -1,3 +1,4 @@
+from modules.mining_news.helpers import Helpers
 from modules.mining_news.google_news.controller import Controller as GoogleNewsController
 from modules.mining_news.google_search.controller import Controller as GoogleSearchController
 
@@ -16,11 +17,15 @@ queries = [
     # f"{keyword} meeting",
 ]
 
+driver = Helpers.chrome_driver_undetected_v1()
+
 for idx, item in enumerate(queries):
     print("GoogleNewsController.mining")
     GoogleNewsController.mining(keyword=keyword, query=item)
     print("")
 
     print("GoogleSearchController.mining")
-    GoogleSearchController.mining(keyword=keyword, query=item,)
+    GoogleSearchController.mining(keyword=keyword, query=item, driver=driver)
     print("")
+
+driver.quit()
