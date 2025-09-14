@@ -4,8 +4,8 @@ import urllib.parse
 
 from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as ec
+# from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as ec
 
 from modules.mining_news.helpers import Helpers
 
@@ -79,6 +79,9 @@ class Controller:
             }
             pprint.pp(metadata)
 
+            if keyword:
+                pass
+
             MiningNewsHistoryRepository.store(
                 mining_source_id=2,
                 code=metadata['url'],
@@ -129,9 +132,11 @@ class Controller:
                         print(f"next_button: False")
 
                 if next_button:
-                    WebDriverWait(driver, 10).until(ec.element_to_be_clickable(next_button))
-                    driver.execute_script("arguments[0].scrollIntoView();", next_button)
-                    driver.execute_script("arguments[0].click();", next_button)
+                    next_button_href = next_button.get_attribute("href")
+                    print(f"next_button_href: {next_button_href}")
+
+                    driver.get(next_button_href)
+                    time.sleep(5)
                 else:
                     break
 
