@@ -1,0 +1,14 @@
+python-dotenv
+
+Flask
+Flask-Bcrypt
+PyJWT
+
+alembic
+psycopg2
+
+beautifulsoup4
+undetected-chromedriver
+selenium
+
+gnews
